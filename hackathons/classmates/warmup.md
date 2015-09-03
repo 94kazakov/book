@@ -10,7 +10,8 @@ The comments data is imported as `data.comments`.
 
 {% lodash %}
 // TODO: write code to answer this question
-return 25
+result = _.size(data.comments)
+return result
 {% endlodash %}
 
 There are {{result}} submissions.
@@ -21,7 +22,8 @@ We can get the data of the first comment by
 
 {% lodash %}
 // TODO: use lodash's method instead of direct array access via [0]
-return data.comments[0]
+firstJSON = _.first(data)
+return _.first(data.comments)
 {% endlodash %}
 
 The result is
@@ -45,10 +47,14 @@ The code to retrieve the data about the favorite food is (hint: use [split()](ht
 var text = _.first(data.comments).body
 console.log(text)
 console.log(text.split('\n'))
-
-// TODO: add code to process text to get the person's favorite food
-
-return 'Sushi'
+var bodyParsed = text.split('\n')
+for (var i=0; i<bodyParsed.length; i++){
+	//console.log(_.includes(bodyParsed[i], "ood"))
+	if (_.includes(bodyParsed[i], "ood")) {
+		food = bodyParsed[i];
+	}
+}
+return food.split(': ')[1]
 {% endlodash %}
 
 So, {{name}}'s favorite food is {{result}}.

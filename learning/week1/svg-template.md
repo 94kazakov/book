@@ -23,7 +23,7 @@ The rectangles below are also generated using the tag.
 {% set numbers = [1,2,3,4,5,6,7] %}
 <svg width="500" height="200">
 {% for number in numbers %}
-    <rect x="{{loop.index * 20}}" width="20" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+    <rect x="{{number * 20}}" width="20" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
 {% endfor %}
 </svg>
 
@@ -38,9 +38,18 @@ Now it's your team's turn to work together to complete the challenges below.
 Draw negative numbers in red and positive numbers in green.
 
 {% set numbers = [43,21,-13,32,20,5,-8,29,9] %}
+<svg width="500" height="200">
 {% for number in numbers %}
-<li>{{number}}</li>
+	{%if (number%2) == 0 %}
+		<text y="{{loop.index * 20}}" font-family="Futura" font-size="20" fill="rgb(14, 145, 140)"> {{number}} </text>
+   	{% endif %}
+
+   	{%if (number%2) != 0 %}
+		<text y="{{loop.index * 20}}" font-family="Futura" font-size="20" fill="rgb(179, 28, 58)"> {{number}} </text>
+   	{% endif %}
+
 {% endfor %}
+</svg>
 
 (Hint: use the [if tag](https://mozilla.github.io/nunjucks/templating.html#if))
 
@@ -53,7 +62,7 @@ Draw negative numbers in red and positive numbers in green.
 
 <svg width="500" height="200">
 {% for number in numbers %}
-    <rect x="{{loop.index * 20}}" width="20" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+    <rect x="{{loop.index * 30}}" width="20" height="{{number*2}}" style="fill:rgb(179, 28, 58);stroke-width:3;stroke:rgb(0,0,0)" />
 {% endfor %}
 </svg>
 
@@ -65,7 +74,7 @@ Draw negative numbers in red and positive numbers in green.
 
 <svg width="500" height="200">
 {% for number in numbers %}
-    <rect y="{{loop.index * 20}}" width="100" height="20" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+    <rect y="{{loop.index * 30}}" width="{{number*2}}" height="20" style="fill:rgb(179, 28, 58);stroke-width:3;stroke:rgb(0,0,0)" />
 {% endfor %}
 </svg>
 
@@ -81,8 +90,7 @@ Draw negative numbers in red and positive numbers in green.
 <table>
     {% for rows in data %}
         <tr>
-            <!-- Add your code here  -->
-            <td>10</td><td>15</td>
+            <td>{{rows[0]}}</td><td>{{rows[1]}}</td>
         </tr>
     {% endfor %}
 </table>
@@ -97,7 +105,7 @@ Draw negative numbers in red and positive numbers in green.
 
 <svg width="500" height="200" style="border:1px solid grey">
 {% for point in data %}
-    <circle cx="{{point[0]}}" cy="{{point[1]}}" r="2" stroke="black" stroke-width="3" fill="red" />
+    <circle cx="{{point[0]*3.5}}" cy="{{point[1]*3.5}}" r="3" stroke="rgb(179, 28, 58)" stroke-width="3" fill="rgb(179, 28, 58)" />
 {% endfor %}
 </svg>
 
@@ -110,6 +118,6 @@ of the circle to represent the third value.
 
 <svg width="500" height="200" style="border:1px solid grey">
 {% for point in data %}
-    <circle cx="{{point[0]}}" cy="{{point[1]}}" r="2" stroke="black" stroke-width="3" fill="red" />
+    <circle cx="{{point[0]*3.5}}" cy="{{point[1]*3.5}}" r="{{point[2]}}" stroke="rgb(179, 28, 58)" stroke-width="3" fill="rgb(179, 28, 58)" />
 {% endfor %}
 </svg>

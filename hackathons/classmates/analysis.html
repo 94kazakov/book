@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Thu Sep 03 2015 14:30:16 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Thu Sep 03 2015 19:51:35 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -578,14 +578,29 @@ console&gt; 2
 <p>The answer is Java.</p>
 <h2 id="who-like-the-same-food-as-kjblakemore">Who like the same food as <code>kjblakemore</code>?</h2>
 <p><pre>
-<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&quot;body&quot;</span>)
-<span class="keyword">var</span> foodName = _.filter(comments, <span class="keyword">function</span>(n) {
-    <span class="keyword">return</span> _.includes(n.toLowerCase(), <span class="string">&quot;kjblakemore&quot;</span>)
+<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
+
+<span class="keyword">var</span> kjComment = _.filter(comments, <span class="keyword">function</span>(n) {
+    <span class="keyword">return</span> _.includes(n, <span class="string">&quot;Karen Blakemore&quot;</span>)
 });
-console.log(foodName)
-</pre><div class="console"><pre>console&gt; []
-</pre></div></p>
-<p>Their names are .</p>
+
+<span class="keyword">var</span> otherComments = _.reject(comments, <span class="keyword">function</span>(n) {
+<span class="keyword">return</span> _.includes(n, <span class="string">&quot;Karen Blakemore&quot;</span>)
+});
+
+<span class="keyword">var</span> kjFood = _.map(kjComment, <span class="keyword">function</span>(comment) {
+    <span class="keyword">var</span> food = _.last(comment.split(<span class="string">&apos;\r\n&apos;</span>))
+    <span class="keyword">return</span> food.split(<span class="string">&apos;:&apos;</span>)[<span class="number">1</span>]
+});
+
+<span class="keyword">var</span> sameFood = _.filter(otherComments, <span class="keyword">function</span>(n) {
+    <span class="keyword">return</span> _.includes(n.toLowerCase(), kjFood.toString().toLowerCase())
+});
+
+<span class="keyword">return</span> sameFood
+
+</pre></p>
+<p>0 like the same food as kjblakemore.</p>
 
                     
                     </section>
@@ -609,10 +624,6 @@ console.log(foodName)
 
     
     <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
-    
-
-    
-    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
 <script>

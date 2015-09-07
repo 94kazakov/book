@@ -392,16 +392,8 @@ What are all person-favorite pairs?
 
 // hint: use nested _.map, then  _.flatten
 
-var result = _.map(data, function(d){
-
-
-        return _.map(d.favorites, function(f){
-
-                return {name: d.name, favorite: f}
-
-            })
-    })
-return _.flatten(result)
+var result = 'not done'
+return result
 
 {% endlodashexercise %}
 
@@ -506,16 +498,8 @@ What are all age-favorite pairs (in ascending order)?
 
 // hint: use nested _.map, then  _.flatten
 
-var result = _.map(data, function(d){
-
-
-        return _.map(d.favorites, function(f){
-
-                return {age: d.age, favorite: f}
-
-            })
-    })
-return _.sortBy(_.flatten(result), 'age')
+var result = 'not done'
+return result
 
 {% endlodashexercise %}
 
@@ -844,7 +828,8 @@ Group people by city
 }
 {% solution %}
 
-return _.groupBy(data, 'city')
+var result = 'not done'
+return result
 
 {% endlodashexercise %}
 
@@ -878,10 +863,7 @@ Group people by city and count how many people in each city
 
 {% solution %}
 
-var gs = _.groupBy(data, 'city')
-var result = _.mapValues(gs, function(v){
-    return v.length
-})
+var result = 'not done'
 return result
 
 {% endlodashexercise %}
@@ -915,10 +897,7 @@ What is the oldest age in each city?
 
 {% solution %}
 
-var gs = _.groupBy(data, 'city')
-var result = _.mapValues(gs, function(v){
-    return _.max(_.pluck(v, 'age'))
-})
+var result = 'not done'
 return result
 
 {% endlodashexercise %}
@@ -952,12 +931,7 @@ How many Smith's are in each city?
 
 {% solution %}
 
-var gs = _.groupBy(data, 'city')
-var result = _.mapValues(gs, function(v){
-    return _.filter(v, function(d){
-            return _.include(d.name, 'Smith')
-        }).length
-})
+var result = 'not done'
 return result
 
 {% endlodashexercise %}

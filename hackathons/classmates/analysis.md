@@ -63,11 +63,27 @@ The answer is {{result}}.
 ## Who like the same food as `kjblakemore`?
 
 {% lodash %}
-var comments = _.pluck(data.comments, "body")
-var foodName = _.filter(comments, function(n) {
-	return _.includes(n.toLowerCase(), "kjblakemore")
+var comments = _.pluck(data.comments, 'body')
+
+var kjComment = _.filter(comments, function(n) {
+    return _.includes(n, "Karen Blakemore")
 });
-console.log(foodName)
+
+var otherComments = _.reject(comments, function(n) {
+return _.includes(n, "Karen Blakemore")
+});
+
+var kjFood = _.map(kjComment, function(comment) {
+    var food = _.last(comment.split('\r\n'))
+    return food.split(':')[1]
+});
+
+var sameFood = _.filter(otherComments, function(n) {
+    return _.includes(n.toLowerCase(), kjFood.toString().toLowerCase())
+});
+
+return sameFood
+
 {% endlodash %}
 
-Their names are {{result}}.
+{{result.length}} like the same food as kjblakemore.

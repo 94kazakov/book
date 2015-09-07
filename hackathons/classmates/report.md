@@ -6,27 +6,29 @@ As a class, we brainstormed and came up with a long list of further questions we
 on the "self-introduction" data. Out of these questions, our team chose to tackle on
 the following:
 
-# (Question 1)
+
+#How many people responded before the first class?
+{% lodash %}
+return "[answer]"
+{% endlodash %}
+
+
+
+#How many people are applied math major? 	
+{% lodash %}
+return "[answer]"
+{% endlodash %}
+
+
+
+#Who is not a computer science major? 
 
 {% lodash %}
 return "[answer]"
 {% endlodash %}
 
 
-# (Question 2)
-
-{% lodash %}
-return "[answer]"
-{% endlodash %}
-
-
-# (Question 3)
-
-{% lodash %}
-return "[answer]"
-{% endlodash %}
-
-# (Question 4)
+#How may people said "food" in their favorite foods? 
 
 {% lodash %}
 return "[answer]"

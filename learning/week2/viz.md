@@ -17,32 +17,17 @@ including the controls, widgets ...etc.
 
 # How big the deal Tableau really is?
 
-(write your answer based on the statistics you can find online)
+On quora it has 6.5K followers. Highest followers number on Quora is around 50K. Therefore, we can say that Tableau is realtively popular, especially in its own circle of non programmers who use it for data visualization. 
 
-# (Question 1)
-
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
-
-# (Question 2)
-
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
-
-# (Question 3)
-
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
-
-# (Question 4)
-
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+#Who is not a computer science major?
+![screenshot](nonCS.png)
+John Cronk,Sushant Mittal,Sanketh S Shetty,Brian McKean, are not computer science major.
+#How many people responded before the first day of class (August 24th)?
+![screenshot](before24.png)
+5 have responded before first class date.
+#How many people are applied math major? Who are they? 	
+![screenshot](math.png)
+We have 3 Applied Math students. William Farmer,Denis Kazakov,Nicole Woytarowicz are Applied Math major.
+#Of people that responded on 24th, how many people responded after class began? 
+![screenshot](on24.png)
+13 Responded after the class start time on 24th of August.

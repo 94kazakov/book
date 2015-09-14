@@ -73,8 +73,12 @@ What names begin with the letter J?
 ['John','Joe']
 
 {% solution %}
-
-var result = 'not done'
+names = _.pluck(data, "name")
+var result = _.filter(names, function(n){
+  if (n[0] == "J"){
+    return n
+  }
+})
 return result
 
 {% endlodashexercise %}
@@ -96,8 +100,8 @@ How many Johns?
 3
 
 {% solution %}
-var result = 'not done'
-return result
+var result = _.pluck(_.filter(data, {name: "John"}), "name")
+return result.length
 
 {% endlodashexercise %}
 
@@ -119,9 +123,9 @@ What are all the first names?
 ["John","Mary","Peter","Ben"]
 
 {% solution %}
-var result = 'not done'
-return result
-
+return _.map(data, function(n){
+  return n.name.split(" ")[0]
+})
 {% endlodashexercise %}
 
 
@@ -145,8 +149,13 @@ What are the first names of Smith?
 ["John","Mary","Ben"]
 
 {% solution %}
-var result = 'not done'
-return result
+var names = _.pluck(data, "name")
+var smiths = _.filter(names, function(n){
+  return n.indexOf("Smith") > -1
+})
+return _.map(smiths, function(n){
+  return n.split(" ")[0]
+})
 {% endlodashexercise %}
 
 
@@ -170,7 +179,12 @@ Change the format to lastname, firstname
 [{name: 'Smith, John'}, {name: 'Kay, Mary'}, {name: 'Pan, Peter'}]
 
 {% solution %}
-var result = 'not done'
+var names = _.pluck(data, "name")
+var result = _.map(names, function(n){
+  var name = n.split(' ')[0]
+  var lastName = n.split(' ')[1]
+  return {name: lastName + ", " + name}
+});
 return result
 {% endlodashexercise %}
 
@@ -192,9 +206,11 @@ How many women?
 
 {% solution %}
 
-var result = 'not done'
-return result
-
+var names = _.pluck(data, "gender")
+var smiths = _.filter(names, function(n){
+  return n == "f"
+})
+return smiths.length
 {% endlodashexercise %}
 
 
@@ -218,9 +234,10 @@ How many men whose last name is Smith?
 2
 
 {% solution %}
-
-var result = 'not done'
-return result
+var smiths = _.filter(data, function(n){
+  return (n.gender == "m" && n.name.indexOf("Smith") > -1)
+})
+return smiths.length
 
 {% endlodashexercise %}
 
@@ -243,10 +260,15 @@ Are there more men than women?
 true
 
 {% solution %}
+var women = _.filter(data, function(n){
+  return n.gender == "f"
+})
 
-var result = 'not done'
-return result
+var men = _.filter(data, function(n){
+  return n.gender == "m"
+})
 
+return men.length > women.length
 {% endlodashexercise %}
 
 
@@ -271,9 +293,10 @@ What is Peter Pan's gender?
 
 {% solution %}
 
-var result = 'not done'
-return result
-
+var peter = _.filter(data, function(n){
+  return n.name == "Peter Pan"
+})
+return peter[0].gender
 {% endlodashexercise %}
 
 
@@ -295,10 +318,8 @@ What is the oldest age?
 54
 
 {% solution %}
-
-var result = 'not done'
-return result
-
+var result = _.sortBy(data, 'age')
+return _.last(result).age
 {% endlodashexercise %}
 
 
@@ -323,7 +344,9 @@ true
 {% solution %}
 
 // use _.all
-var result = 'not done'
+var result = _.every(data, function(n){
+  return n.age < 60
+})
 return result
 
 {% endlodashexercise %}
@@ -348,7 +371,9 @@ true
 {% solution %}
 
 // use _.some
-var result = 'not done'
+var result = _.some(data, function(n){
+  return n.age < 18
+})
 return result
 
 {% endlodashexercise %}
@@ -375,8 +400,10 @@ How many people whose favorites include food?
 
 {% solution %}
 
-var result = 'not done'
-return result
+var result = _.filter(data, function(n){
+  return _.includes(n.favorites, 'food')
+})
+return result.length
 
 {% endlodashexercise %}
 
@@ -403,8 +430,16 @@ Who are over 40 and love travel?
 ['Mary Smith', 'Joe Johnson']
 
 {% solution %}
-
-var result = 'not done'
+result = _.filter(
+              _.map(data, function(n){
+                if ((n.age > 40) && (_.includes(n.favorites, 'travel'))) {
+                  return n.name
+                }
+              }),
+              function(n){
+                return n != null
+              }
+              )
 return result
 
 {% endlodashexercise %}
@@ -431,9 +466,13 @@ Who is the oldest person loving food?
 'John Smith'
 
 {% solution %}
-
-var result = 'not done'
-return result
+loveFood = _.filter(data, function(n){
+  if (_.includes(n.favorites, "food")){
+    return n
+  }
+})
+var result = _.sortBy(loveFood, 'age')
+return result[result.length - 1].name
 
 {% endlodashexercise %}
 
@@ -467,9 +506,8 @@ What are all the unique favorites?
 {% solution %}
 
 // hint: use _.pluck, _.uniq, _.flatten in some order
-
-var result = 'not done'
-return result
+var favs = _.flatten(_.pluck(data, "favorites"))
+return _.uniq(favs)
 
 {% endlodashexercise %}
 
@@ -499,7 +537,9 @@ What are all the unique last names?
 
 {% solution %}
 
-var result = 'not done'
-return result
+var result = _.map(data, function(n){
+  return n.name.split(" ")[1]
+})
+return _.uniq(result)
 
 {% endlodashexercise %}

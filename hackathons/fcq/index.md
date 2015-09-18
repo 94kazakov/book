@@ -56,3 +56,7 @@ return _.mapValues(grps, function(d){
 {% endlodash %}
 
 {{ result | json}}
+
+##Is there correlation between professor quality ratings to the grade distribution of the classes they teach?
+
+##What major is most rewarding? (rew = (AVE4000> - AVE)/(some normalizer))

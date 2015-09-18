@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Classmates | book</title>
+        <title>Method | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../../hackathons/classmates/data.html" />
+    <link rel="next" href="../../hackathons/tinker/report.html" />
     
     
-    <link rel="prev" href="../../hackathons/tinker/report.html" />
+    <link rel="prev" href="../../hackathons/tinker/index.html" />
     
 
         <!-- head:end -->
@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2" data-basepath="../.." data-revision="Thu Sep 17 2015 22:30:49 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.1.1" data-basepath="../.." data-revision="Thu Sep 17 2015 22:30:49 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -365,7 +365,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="hackathons/tinker/method.html">
+        <li class="chapter active" data-level="2.1.1" data-path="hackathons/tinker/method.html">
             
                 
                     <a href="../../hackathons/tinker/method.html">
@@ -400,7 +400,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2" data-path="hackathons/classmates/index.html">
+        <li class="chapter " data-level="2.2" data-path="hackathons/classmates/index.html">
             
                 
                     <a href="../../hackathons/classmates/index.html">
@@ -642,16 +642,83 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="hackathon-classmates">Hackathon: Classmates</h1>
-<p>The Fall 2015 Big Data HCI course is an exciting course that has attracted
-students of all sorts of backgrounds. Looking around, some may start to wonder,
-<strong>who are these people?</strong></p>
-<p>The objective of today&apos;s hackathon is to produce a data-driven report to provide
-some insight about your classmates.</p>
-<h2 id="data">Data</h2>
-<p>First, what data can we use?</p>
-<p>At the start of the semester, students were asked to comment on an <a href="https://github.com/bigdatahci2015/forum/issues/1" target="_blank">issue</a> on the course&apos;s <a href="https://github.com/bigdatahci2015/forum" target="_blank">forum </a> as a way to make a brief self-introduction.</p>
-<p>The data can be downloaded using <a href="https://developer.github.com/v3/" target="_blank">Github&apos;s API</a>. It&apos;s already done for you. The raw data can be seen on the next page.</p>
+                        <h1 id="method">Method</h1>
+<p>The main question is too general and too vague. As a class, we brainstormed
+and came up with a list of specific questions that are easier to tackle while useful
+for making the decision.</p>
+<p>From the class discussion, we wrote down five specific questions that are particularly interesting.</p>
+<p>connect people who want to work together</p>
+<ul>
+<li>What does popularity on github mean?</li>
+<li>Would the total numbers of forks/stars/watchers for each repository be meaningful to you?</li>
+<li>Is popularity total or relative to time? </li>
+</ul>
+<p>From the above list, my team chose a question, worked on it, and created a report on the next page.</p>
+<p>We decided that it&apos;s useful to know what lagnuage is popular on github and that total number of pushes determine if the language is popular on github.</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Total pushes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JavaScript</td>
+<td>3,461,415</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>2,323,315</td>
+</tr>
+<tr>
+<td>CSS</td>
+<td>1,810,013</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>1,654,226</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>1,391,467</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>1,106,259</td>
+</tr>
+<tr>
+<td>C++</td>
+<td>1,013,761</td>
+</tr>
+</tbody>
+</table>
+<p><svg height="300" width="500">
+
+<!-- barchart with five bars -->
+
+<g> 
+	<rect x="0" y="10" width="100" height="50" style="fill:rgb(60,26,43);stroke-width:3;stroke:rgb(0,0,0)"/>
+	<text x="0" y="25" font-family="Verdana" font-size="20" fill="rbg(0,0,250)"> javascript </text>
+</g>
+<g> 
+	<rect x="0" y="60" width="70" height="50" style="fill:rgb(60,26,43);stroke-width:3;stroke:rgb(0,0,0)"/>
+	<text x="0" y="75" font-family="Verdana" font-size="20" fill="rbg(0,0,250)"> java </text>
+</g>
+<g> 
+	<rect x="0" y="110" width="50" height="50" style="fill:rgb(60,26,43);stroke-width:3;stroke:rgb(0,0,0)"/>
+	<text x="0" y="125" font-family="Verdana" font-size="20" fill="rbg(0,0,250)"> python</text>
+</g>
+<g> 
+	<rect x="0" y="160" width="47" height="50" style="fill:rgb(60,26,43);stroke-width:3;stroke:rgb(0,0,0)"/>
+	<text x="0" y="175" font-family="Verdana" font-size="20" fill="rbg(0,0,250)"> css</text>
+</g>
+<g> 
+	<rect x="0" y="210" width="43" height="50" style="fill:rgb(60,26,43);stroke-width:3;stroke:rgb(0,0,0)"/>
+	<text x="0" y="225" font-family="Verdana" font-size="20" fill="rbg(0,0,250)"> php </text>
+</g>
+
+</svg></p>
 
                     
                     </section>
@@ -662,10 +729,10 @@ some insight about your classmates.</p>
         </div>
 
         
-        <a href="../../hackathons/tinker/report.html" class="navigation navigation-prev " aria-label="Previous page: Report"><i class="fa fa-angle-left"></i></a>
+        <a href="../../hackathons/tinker/index.html" class="navigation navigation-prev " aria-label="Previous page: Tinker"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../hackathons/classmates/data.html" class="navigation navigation-next " aria-label="Next page: Data"><i class="fa fa-angle-right"></i></a>
+        <a href="../../hackathons/tinker/report.html" class="navigation navigation-next " aria-label="Next page: Report"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -19,37 +19,33 @@ how to transform this JSON file into a format that can be fed into Tableau. As
 a junior and senior, you are expected to be able to look around the Internet
 to problem solve.
 
-# (Question 1)
+# What department has the lowest average GPA? by Nicole Woytarowicz
 
-![screenshot](screenshot.png)
+![screenshot](gpa.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+As you see, BADM has the the lowest GPA of 1.16.
 
-# (Question 2)
+# Which classes(with specific professors) damaged the most students (sort by:C + D + F rating)? by Denis Kazakov
 
-![screenshot](screenshot.png)
+![screenshot](cdfMax.png)
+![screenshot](cdfSum.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+As you see, there are two ways to interpret the data. One gives you an overall winner in highest CDF rating which is Calculus 1 with Kish. But we can also interpret the data as the sum of CDF ratings for classes. This way Human Anatomy Lab wins as it is consistently really high CDF scores. 
 
-# (Question 3)
+# What department should I take classes in if I want to boost my GPA? by Caleb Hsu
 
-![screenshot](screenshot.png)
+![screenshot](major.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+Same as with GPA, but the opposite. I should take classes in the Museum department if I want to boost my GPA.
 
-# (Question 4)
+# Which classes have the maximum Hours spent (16+) per week? by Parker Illig
 
-![screenshot](screenshot.png)
+![screenshot](16.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+We see that PMUS has most classes that passed our filter of 16+ hours. 
 
-# (Question 5)
+What classes have very different workloads compared to credit hours? by John Cronk
 
-![screenshot](screenshot.png)
+![screenshot](workload.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)    
+There are quite some outliers here, as we see with HUMN being 6 credits. But THTR won this won with the highest ratio of workload/hours. 

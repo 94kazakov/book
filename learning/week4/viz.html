@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Analysis | book</title>
+        <title>FCQ Viz | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../../hackathons/classmates/report.html" />
+    <link rel="next" href="../../hackathons/index.html" />
     
     
-    <link rel="prev" href="../../hackathons/classmates/warmup.html" />
+    <link rel="prev" href="../../learning/week4/report.html" />
     
 
         <!-- head:end -->
@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Sun Sep 20 2015 21:50:54 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.5.2" data-basepath="../.." data-revision="Sun Sep 20 2015 21:50:54 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -359,7 +359,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="learning/week4/viz.html">
+        <li class="chapter active" data-level="1.5.2" data-path="learning/week4/viz.html">
             
                 
                     <a href="../../learning/week4/viz.html">
@@ -497,7 +497,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2.3" data-path="hackathons/classmates/analysis.html">
+        <li class="chapter " data-level="2.2.3" data-path="hackathons/classmates/analysis.html">
             
                 
                     <a href="../../hackathons/classmates/analysis.html">
@@ -693,82 +693,36 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="analysis">Analysis</h1>
-<p>After completing the warmup exercises, your task is to do four more slightly
-more challenges analyses.</p>
-<h2 id="how-many-students-like-sushi-as-their-favorite-food">How many students like sushi as their favorite food?</h2>
-<p><pre>
-<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&quot;body&quot;</span>);
-<span class="keyword">var</span> sushiComments = _.filter(comments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n, <span class="string">&quot;ushi&quot;</span>)
-    });
-<span class="keyword">return</span> sushiComments.length
-</pre></p>
-<p>The answer is 5.</p>
-<h2 id="who-are-the-students-liking-python-the-most">Who are the students liking Python the most?</h2>
-<p><pre>
-<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&quot;body&quot;</span>);
-<span class="keyword">var</span> pythonComments = _.filter(comments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n, <span class="string">&quot;ython&quot;</span>)
-    });
-
-names = _.map(pythonComments, <span class="keyword">function</span>(n){
-    <span class="keyword">var</span> parsed = n.toLowerCase().split(<span class="string">&apos;\r\n&apos;</span>)
-    name = parsed[<span class="number">0</span>].split(<span class="string">&apos;: &apos;</span>)[<span class="number">1</span>]
-    <span class="keyword">return</span> name
-});
-<span class="keyword">return</span> names
-</pre></p>
-<p>Their names are william farmer,heather witte,zach lamb,zhili yang,john cronk,denis kazakov,caleb hsu,karen blakemore,sanketh s shetty,andrey shprengel.</p>
-<h2 id="are-there-more-javascript-lovers-or-java-lovers">Are there more Javascript lovers or Java lovers?</h2>
-<p><pre>
-<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&quot;body&quot;</span>);
-<span class="keyword">var</span> javaComments = _.filter(comments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n.toLowerCase(), <span class="string">&quot;java&quot;</span>)
-    });
-<span class="keyword">var</span> javascript = _.filter(javaComments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n.toLowerCase(), <span class="string">&quot;script&quot;</span>)
-    });
-<span class="keyword">var</span> java = _.reject(javaComments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n.toLowerCase(), <span class="string">&quot;script&quot;</span>)
-    });
-
-console.log(java.length)
-console.log(javascript.length)
-<span class="keyword">if</span> (javascript.length &gt; java.length){
-    <span class="keyword">return</span> <span class="string">&quot;Javascript&quot;</span>
-} <span class="keyword">else</span> {
-    <span class="keyword">return</span> <span class="string">&quot;Java&quot;</span>
-}
-</pre><div class="console">console&gt; 4
-console&gt; 2
-</div></p>
-<p>The answer is Java.</p>
-<h2 id="who-like-the-same-food-as-kjblakemore">Who like the same food as <code>kjblakemore</code>?</h2>
-<p><pre>
-<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
-
-<span class="keyword">var</span> kjComment = _.filter(comments, <span class="keyword">function</span>(n) {
-    <span class="keyword">return</span> _.includes(n, <span class="string">&quot;Karen Blakemore&quot;</span>)
-});
-
-<span class="keyword">var</span> otherComments = _.reject(comments, <span class="keyword">function</span>(n) {
-<span class="keyword">return</span> _.includes(n, <span class="string">&quot;Karen Blakemore&quot;</span>)
-});
-
-<span class="keyword">var</span> kjFood = _.map(kjComment, <span class="keyword">function</span>(comment) {
-    <span class="keyword">var</span> food = _.last(comment.split(<span class="string">&apos;\r\n&apos;</span>))
-    <span class="keyword">return</span> food.split(<span class="string">&apos;:&apos;</span>)[<span class="number">1</span>]
-});
-
-<span class="keyword">var</span> sameFood = _.filter(otherComments, <span class="keyword">function</span>(n) {
-    <span class="keyword">return</span> _.includes(n.toLowerCase(), kjFood.toString().toLowerCase())
-});
-
-<span class="keyword">return</span> sameFood
-
-</pre></p>
-<p>0 like the same food as kjblakemore.</p>
+                        <h1 id="visualization">Visualization</h1>
+<p>Using Tableau, create visualization for each question in the report. You will
+work on this independently just like last week.</p>
+<p>To include a Tableau visualization in your report, take a screenshot, save it as an image,
+put it in the <code>learning/week2</code> folder, and replace <code>![screenshot](screenshot.png)</code>  with
+your own image. Please makes sure your screenshot includes the <em>entire</em> Tableau interface
+including the controls, widgets ...etc.</p>
+<h1 id="import">Import</h1>
+<p>Data: <a href="https://github.com/bigdatahci2015/book/blob/master/hackathons/fcq/fcq.clean.json" target="_blank">fcq.clean.json</a></p>
+<p>(a copy of this file is in your book repository already in the directory <code>hackathons/fcq</code>)</p>
+<p>This dataset is provided to you in the JSON format. Your first task is to figure out
+how to transform this JSON file into a format that can be fed into Tableau. As
+a junior and senior, you are expected to be able to look around the Internet
+to problem solve.</p>
+<h1 id="what-department-has-the-lowest-average-gpa-by-nicole-woytarowicz">What department has the lowest average GPA? by Nicole Woytarowicz</h1>
+<p><img src="gpa.png" alt="screenshot"></p>
+<p>As you see, BADM has the the lowest GPA of 1.16.</p>
+<h1 id="which-classes-with-specific-professors-damaged-the-most-students-sort-by-c-d-f-rating-by-denis-kazakov">Which classes(with specific professors) damaged the most students (sort by:C + D + F rating)? by Denis Kazakov</h1>
+<p><img src="cdfMax.png" alt="screenshot">
+<img src="cdfSum.png" alt="screenshot"></p>
+<p>As you see, there are two ways to interpret the data. One gives you an overall winner in highest CDF rating which is Calculus 1 with Kish. But we can also interpret the data as the sum of CDF ratings for classes. This way Human Anatomy Lab wins as it is consistently really high CDF scores. </p>
+<h1 id="what-department-should-i-take-classes-in-if-i-want-to-boost-my-gpa-by-caleb-hsu">What department should I take classes in if I want to boost my GPA? by Caleb Hsu</h1>
+<p><img src="major.png" alt="screenshot"></p>
+<p>Same as with GPA, but the opposite. I should take classes in the Museum department if I want to boost my GPA.</p>
+<h1 id="which-classes-have-the-maximum-hours-spent-16-per-week-by-parker-illig">Which classes have the maximum Hours spent (16+) per week? by Parker Illig</h1>
+<p><img src="16.png" alt="screenshot"></p>
+<p>We see that PMUS has most classes that passed our filter of 16+ hours. </p>
+<p>What classes have very different workloads compared to credit hours? by John Cronk</p>
+<p><img src="workload.png" alt="screenshot"></p>
+<p>There are quite some outliers here, as we see with HUMN being 6 credits. But THTR won this won with the highest ratio of workload/hours. </p>
 
                     
                     </section>
@@ -779,10 +733,10 @@ console&gt; 2
         </div>
 
         
-        <a href="../../hackathons/classmates/warmup.html" class="navigation navigation-prev " aria-label="Previous page: Warmup"><i class="fa fa-angle-left"></i></a>
+        <a href="../../learning/week4/report.html" class="navigation navigation-prev " aria-label="Previous page: FCQ Report"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../hackathons/classmates/report.html" class="navigation navigation-next " aria-label="Next page: Report"><i class="fa fa-angle-right"></i></a>
+        <a href="../../hackathons/index.html" class="navigation navigation-next " aria-label="Next page: Hackathons"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

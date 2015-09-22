@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.3.1" data-basepath="../.." data-revision="Sun Sep 20 2015 21:50:54 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.3.1" data-basepath="../.." data-revision="Mon Sep 21 2015 18:13:29 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +653,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -697,31 +803,24 @@
 <h1 id="warmup">Warmup</h1>
 <p>Next, complete the following warmup exercises as a team.</p>
 <h2 id="how-many-unique-subject-codes">How many unique subject codes?</h2>
-<p><pre>
-<span class="keyword">return</span> _.uniq(_.pluck(data, <span class="string">&quot;Subject&quot;</span>)).length
-</pre></p>
+<p><pre><code>return _.uniq(_.pluck(data, &quot;Subject&quot;)).length</code></pre></p>
 <p>They are 113 unique subject codes.</p>
 <h2 id="how-many-computer-science-csci-courses">How many computer science (CSCI) courses?</h2>
-<p><pre>
-cs = _.filter(data, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n.Subject == <span class="string">&quot;CSCI&quot;</span>
+<p><pre><code>cs = _.filter(data, function(n){
+    return n.Subject == &quot;CSCI&quot;
 })
-<span class="keyword">return</span> cs.length
-</pre></p>
+return cs.length</code></pre></p>
 <p>They are 63 computer science courses.</p>
 <h2 id="what-is-the-distribution-of-the-courses-across-subject-codes">What is the distribution of the courses across subject codes?</h2>
-<p><pre>
-<span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="comment">// {&quot;HIST&quot;: 78,&quot;HONR&quot;: 20,&quot;HUMN&quot;: 17,&quot;IAFS&quot;: 20,&quot;IPHY&quot;: 134}</span>
-subjects =  _.groupBy(data, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n.Subject
+<p><pre><code>// TODO: replace with code that computes the actual result
+// {&quot;HIST&quot;: 78,&quot;HONR&quot;: 20,&quot;HUMN&quot;: 17,&quot;IAFS&quot;: 20,&quot;IPHY&quot;: 134}
+subjects =  _.groupBy(data, function(n){
+    return n.Subject
 })
 
-<span class="keyword">return</span> _.mapValues(subjects, <span class="keyword">function</span>(n){
-  <span class="keyword">return</span> n.length  
-})
-
-</pre></p>
+return _.mapValues(subjects, function(n){
+  return n.length  
+})</code></pre></p>
 <table>
 
     <tr>
@@ -1292,23 +1391,21 @@ subjects =  _.groupBy(data, <span class="keyword">function</span>(n){
 </table>
 
 <h2 id="what-subset-of-these-subject-codes-have-more-than-100-courses">What subset of these subject codes have more than 100 courses?</h2>
-<p><pre>
-<span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="keyword">var</span> grps = _.groupBy(data, <span class="string">&apos;Subject&apos;</span>)
-<span class="keyword">var</span> ret = _.pick(_.mapValues(grps, <span class="keyword">function</span>(d){
-    <span class="keyword">return</span> d.length
-}), <span class="keyword">function</span>(x){
-    <span class="keyword">return</span> x &gt; <span class="number">100</span>
+<p><pre><code>// TODO: replace with code that computes the actual result
+var grps = _.groupBy(data, &apos;Subject&apos;)
+var ret = _.pick(_.mapValues(grps, function(d){
+    return d.length
+}), function(x){
+    return x &gt; 100
 })
 
-subjects =  _.groupBy(data, <span class="string">&quot;Subject&quot;</span>)
-map =  _.mapValues(subjects, <span class="keyword">function</span>(n){
-  <span class="keyword">return</span> n.length  
+subjects =  _.groupBy(data, &quot;Subject&quot;)
+map =  _.mapValues(subjects, function(n){
+  return n.length  
 })
-<span class="keyword">return</span> _.pick(map, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n &gt; <span class="number">100</span>
-})
-</pre></p>
+return _.pick(map, function(n){
+    return n &gt; 100
+})</code></pre></p>
 <table>
 
     <tr>
@@ -1384,16 +1481,14 @@ map =  _.mapValues(subjects, <span class="keyword">function</span>(n){
 </table>
 
 <h2 id="what-subset-of-these-subject-codes-have-more-than-5000-total-enrollments">What subset of these subject codes have more than 5000 total enrollments?</h2>
-<p><pre>
-<span class="comment">//return {&quot;IPHY&quot;: 5507,&quot;MATH&quot;: 8725,&quot;PHIL&quot;: 5672,&quot;PHYS&quot;: 8099,&quot;PSCI&quot;: 5491}</span>
-groups = _.groupBy(data, <span class="string">&quot;Subject&quot;</span>)
-map = _.mapValues(groups, <span class="keyword">function</span>(n){
-  <span class="keyword">return</span> _.sum(_.pluck(n, <span class="string">&quot;N.ENROLL&quot;</span> )) 
+<p><pre><code>//return {&quot;IPHY&quot;: 5507,&quot;MATH&quot;: 8725,&quot;PHIL&quot;: 5672,&quot;PHYS&quot;: 8099,&quot;PSCI&quot;: 5491}
+groups = _.groupBy(data, &quot;Subject&quot;)
+map = _.mapValues(groups, function(n){
+  return _.sum(_.pluck(n, &quot;N.ENROLL&quot; )) 
 })
-<span class="keyword">return</span> _.pick(map, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n &gt; <span class="number">5000</span>
-})
-</pre></p>
+return _.pick(map, function(n){
+    return n &gt; 5000
+})</code></pre></p>
 <table>
 
     <tr>
@@ -1449,19 +1544,17 @@ map = _.mapValues(groups, <span class="keyword">function</span>(n){
 </table>
 
 <h2 id="what-are-the-course-numbers-of-the-courses-tom-pei-hsiu-yeh-taught">What are the course numbers of the courses Tom (PEI HSIU) Yeh taught?</h2>
-<p><pre>
-<span class="comment">//return [&apos;4830&apos;,&apos;4830&apos;]</span>
-<span class="keyword">var</span> groups = _.groupBy(data, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> _.includes(_.pluck(n.Instructors, <span class="string">&quot;name&quot;</span>), <span class="string">&quot;YEH, PEI HSIU&quot;</span>)
+<p><pre><code>//return [&apos;4830&apos;,&apos;4830&apos;]
+var groups = _.groupBy(data, function(n){
+    return _.includes(_.pluck(n.Instructors, &quot;name&quot;), &quot;YEH, PEI HSIU&quot;)
 })
 
-map =  _.mapValues(groups, <span class="keyword">function</span>(n){
-  <span class="keyword">return</span> n.length 
+map =  _.mapValues(groups, function(n){
+  return n.length 
 })
 
-<span class="keyword">return</span> map
-<span class="comment">//return _.pluck(groups.true, &quot;CourseTitle&quot;)</span>
-</pre></p>
+return map
+//return _.pluck(groups.true, &quot;CourseTitle&quot;)</code></pre></p>
 <p>They are <pre style="font-size:11px;line-height:1;max-height:300px;">{
  &quot;false&quot;: 4998,
  &quot;true&quot;: 2
@@ -1486,6 +1579,14 @@ map =  _.mapValues(groups, <span class="keyword">function</span>(n){
 
         
 <script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
+    
+
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
 
     
     <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>

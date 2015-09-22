@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Sun Sep 20 2015 21:50:54 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Mon Sep 21 2015 18:13:29 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +653,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -697,77 +803,68 @@
 <p>After completing the warmup exercises, your task is to do four more slightly
 more challenges analyses.</p>
 <h2 id="how-many-students-like-sushi-as-their-favorite-food">How many students like sushi as their favorite food?</h2>
-<p><pre>
-<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&quot;body&quot;</span>);
-<span class="keyword">var</span> sushiComments = _.filter(comments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n, <span class="string">&quot;ushi&quot;</span>)
-    });
-<span class="keyword">return</span> sushiComments.length
-</pre></p>
+<p><pre><code>var comments = _.pluck(data.comments, &quot;body&quot;);
+var sushiComments = _.filter(comments, function(n){
+		return _.includes(n, &quot;ushi&quot;)
+	});
+return sushiComments.length</code></pre></p>
 <p>The answer is 5.</p>
 <h2 id="who-are-the-students-liking-python-the-most">Who are the students liking Python the most?</h2>
-<p><pre>
-<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&quot;body&quot;</span>);
-<span class="keyword">var</span> pythonComments = _.filter(comments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n, <span class="string">&quot;ython&quot;</span>)
-    });
+<p><pre><code>var comments = _.pluck(data.comments, &quot;body&quot;);
+var pythonComments = _.filter(comments, function(n){
+		return _.includes(n, &quot;ython&quot;)
+	});
 
-names = _.map(pythonComments, <span class="keyword">function</span>(n){
-    <span class="keyword">var</span> parsed = n.toLowerCase().split(<span class="string">&apos;\r\n&apos;</span>)
-    name = parsed[<span class="number">0</span>].split(<span class="string">&apos;: &apos;</span>)[<span class="number">1</span>]
-    <span class="keyword">return</span> name
+names = _.map(pythonComments, function(n){
+	var parsed = n.toLowerCase().split(&apos;\r\n&apos;)
+	name = parsed[0].split(&apos;: &apos;)[1]
+	return name
 });
-<span class="keyword">return</span> names
-</pre></p>
+return names</code></pre></p>
 <p>Their names are william farmer,heather witte,zach lamb,zhili yang,john cronk,denis kazakov,caleb hsu,karen blakemore,sanketh s shetty,andrey shprengel.</p>
 <h2 id="are-there-more-javascript-lovers-or-java-lovers">Are there more Javascript lovers or Java lovers?</h2>
-<p><pre>
-<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&quot;body&quot;</span>);
-<span class="keyword">var</span> javaComments = _.filter(comments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n.toLowerCase(), <span class="string">&quot;java&quot;</span>)
-    });
-<span class="keyword">var</span> javascript = _.filter(javaComments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n.toLowerCase(), <span class="string">&quot;script&quot;</span>)
-    });
-<span class="keyword">var</span> java = _.reject(javaComments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n.toLowerCase(), <span class="string">&quot;script&quot;</span>)
-    });
+<p><pre><code>var comments = _.pluck(data.comments, &quot;body&quot;);
+var javaComments = _.filter(comments, function(n){
+		return _.includes(n.toLowerCase(), &quot;java&quot;)
+	});
+var javascript = _.filter(javaComments, function(n){
+		return _.includes(n.toLowerCase(), &quot;script&quot;)
+	});
+var java = _.reject(javaComments, function(n){
+		return _.includes(n.toLowerCase(), &quot;script&quot;)
+	});
 
 console.log(java.length)
 console.log(javascript.length)
-<span class="keyword">if</span> (javascript.length &gt; java.length){
-    <span class="keyword">return</span> <span class="string">&quot;Javascript&quot;</span>
-} <span class="keyword">else</span> {
-    <span class="keyword">return</span> <span class="string">&quot;Java&quot;</span>
-}
-</pre><div class="console">console&gt; 4
+if (javascript.length &gt; java.length){
+	return &quot;Javascript&quot;
+} else {
+	return &quot;Java&quot;
+}</code></pre><div class="console">console&gt; 4
 console&gt; 2
 </div></p>
 <p>The answer is Java.</p>
 <h2 id="who-like-the-same-food-as-kjblakemore">Who like the same food as <code>kjblakemore</code>?</h2>
-<p><pre>
-<span class="keyword">var</span> comments = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
+<p><pre><code>var comments = _.pluck(data.comments, &apos;body&apos;)
 
-<span class="keyword">var</span> kjComment = _.filter(comments, <span class="keyword">function</span>(n) {
-    <span class="keyword">return</span> _.includes(n, <span class="string">&quot;Karen Blakemore&quot;</span>)
+var kjComment = _.filter(comments, function(n) {
+    return _.includes(n, &quot;Karen Blakemore&quot;)
 });
 
-<span class="keyword">var</span> otherComments = _.reject(comments, <span class="keyword">function</span>(n) {
-<span class="keyword">return</span> _.includes(n, <span class="string">&quot;Karen Blakemore&quot;</span>)
+var otherComments = _.reject(comments, function(n) {
+return _.includes(n, &quot;Karen Blakemore&quot;)
 });
 
-<span class="keyword">var</span> kjFood = _.map(kjComment, <span class="keyword">function</span>(comment) {
-    <span class="keyword">var</span> food = _.last(comment.split(<span class="string">&apos;\r\n&apos;</span>))
-    <span class="keyword">return</span> food.split(<span class="string">&apos;:&apos;</span>)[<span class="number">1</span>]
+var kjFood = _.map(kjComment, function(comment) {
+    var food = _.last(comment.split(&apos;\r\n&apos;))
+    return food.split(&apos;:&apos;)[1]
 });
 
-<span class="keyword">var</span> sameFood = _.filter(otherComments, <span class="keyword">function</span>(n) {
-    <span class="keyword">return</span> _.includes(n.toLowerCase(), kjFood.toString().toLowerCase())
+var sameFood = _.filter(otherComments, function(n) {
+    return _.includes(n.toLowerCase(), kjFood.toString().toLowerCase())
 });
 
-<span class="keyword">return</span> sameFood
-
-</pre></p>
+return sameFood</code></pre></p>
 <p>0 like the same food as kjblakemore.</p>
 
                     
@@ -789,6 +886,14 @@ console&gt; 2
 
         
 <script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
+    
+
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
 
     
     <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>

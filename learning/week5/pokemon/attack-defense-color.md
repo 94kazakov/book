@@ -6,54 +6,14 @@ Compare attack points and represent defense points using colors
 {% data %}
 [
   {
-    "Name": "Bulbasaur",
-    "Type": "GRASS",
-    "HP": 45,
-    "Attack": 49,
-    "Defense": 49,
-    "Special Attack": 65,
-    "Special Defense": 65,
-    "Speed": 45
-  },  
-  {
-    "Name": "Ivysaur",
-    "Type": "GRASS",
-    "HP": 60,
-    "Attack": 62,
-    "Defense": 63,
-    "Special Attack": 80,
-    "Special Defense": 80,
-    "Speed": 60
-  },  
-  {
-    "Name": "Venusaur",
-    "Type": "GRASS",
-    "HP": 80,
-    "Attack": 82,
-    "Defense": 83,
-    "Special Attack": 100,
-    "Special Defense": 100,
-    "Speed": 80
-  },  
-  {
-    "Name": "Mega Venusaur",
-    "Type": "GRASS",
-    "HP": 80,
-    "Attack": 100,
-    "Defense": 123,
-    "Special Attack": 122,
-    "Special Defense": 120,
-    "Speed": 80
-  },
-  {
-    "Name": "Charmander",
-    "Type": "FIRE",
-    "HP": 39,
-    "Attack": 52,
-    "Defense": 43,
-    "Special Attack": 60,
-    "Special Defense": 50,
-    "Speed": 65
+    "Name": "Squirtle",
+    "Type": "WATER",
+    "HP": 44,
+    "Attack": 48,
+    "Defense": 65,
+    "Special Attack": 50,
+    "Special Defense": 64,
+    "Speed": 43
   },
   {
     "Name": "Mega Charizard Y",
@@ -64,18 +24,59 @@ Compare attack points and represent defense points using colors
     "Special Attack": 159,
     "Special Defense": 115,
     "Speed": 100
-  },
+  },  
   {
-    "Name": "Squirtle",
-    "Type": "WATER",
-    "HP": 44,
-    "Attack": 48,
-    "Defense": 65,
-    "Special Attack": 50,
-    "Special Defense": 64,
-    "Speed": 43
-  }
+    "Name": "Charmander",
+    "Type": "FIRE",
+    "HP": 39,
+    "Attack": 52,
+    "Defense": 43,
+    "Special Attack": 60,
+    "Special Defense": 50,
+    "Speed": 65
+  },  
+  {
+    "Name": "Mega Venusaur",
+    "Type": "GRASS",
+    "HP": 80,
+    "Attack": 100,
+    "Defense": 123,
+    "Special Attack": 122,
+    "Special Defense": 120,
+    "Speed": 80
+  },  
+  {
+    "Name": "Venusaur",
+    "Type": "GRASS",
+    "HP": 80,
+    "Attack": 82,
+    "Defense": 83,
+    "Special Attack": 100,
+    "Special Defense": 100,
+    "Speed": 80
+  },    
+  {
+    "Name": "Ivysaur",
+    "Type": "GRASS",
+    "HP": 60,
+    "Attack": 62,
+    "Defense": 63,
+    "Special Attack": 80,
+    "Special Defense": 80,
+    "Speed": 60
+  },    
+  {
+    "Name": "Bulbasaur",
+    "Type": "GRASS",
+    "HP": 45,
+    "Attack": 49,
+    "Defense": 49,
+    "Special Attack": 65,
+    "Special Defense": 65,
+    "Speed": 45
+  }  
 ]
+
 {% solution %}
 
 function computeX(d, i) {
@@ -97,7 +98,7 @@ function computeColor(d, i) {
     return 'rgb(200,0,0)'
 }
 
-var viz = _.map(data.reverse(), function(d, i){
+var viz = _.map(data, function(d, i){
             return {
                 x: computeX(d, i),
                 y: computeY(d, i),

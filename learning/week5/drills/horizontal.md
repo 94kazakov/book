@@ -22,7 +22,7 @@ function computeHeight(d, i) {
 }
 
 function computeWidth(d, i) {
-    return 20 * i + 100
+    return d/4645946
 }
 
 function computeY(d, i) {
@@ -35,10 +35,10 @@ function computeColor(d, i) {
 
 var viz = _.map(data, function(d, i){
             return {
-                x: computeX(d, i),
-                y: computeY(d, i),
-                height: computeHeight(d, i),
-                width: computeWidth(d, i),
+                x: computeX(d.pop, i),
+                y: computeY(d.pop, i),
+                height: computeHeight(d.pop, i),
+                width: computeWidth(d.pop, i),
                 color: computeColor(d, i)
             }
          })

@@ -22,7 +22,7 @@ function computeHeight(d, i) {
 }
 
 function computeWidth(d, i) {
-    return 20 * i + 100
+    return d/4500000
 }
 
 function computeY(d, i) {
@@ -34,7 +34,7 @@ function computeColor(d, i) {
 }
 
 function computeLabel(d, i) {
-    return 'label'
+    return d
 }
 
 var viz = _.map(data, function(d, i){
@@ -42,9 +42,9 @@ var viz = _.map(data, function(d, i){
                 x: computeX(d, i),
                 y: computeY(d, i),
                 height: computeHeight(d, i),
-                width: computeWidth(d, i),
+                width: computeWidth(d.pop, i),
                 color: computeColor(d, i),
-                label: computeLabel(d, i)
+                label: computeLabel(d.pop, i)
             }
          })
 console.log(viz)
@@ -63,7 +63,7 @@ return result.join('\n')
      style="fill:${d.color};
             stroke-width:3;
             stroke:rgb(0,0,0)" />
-<text x="100" y="10">${d.label}</text>
+<text x="300" y="10">${d.label}</text>
 </g>
 
 {% output %}

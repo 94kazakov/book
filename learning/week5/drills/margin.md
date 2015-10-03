@@ -14,15 +14,15 @@ Add some margins between every two bars
 {% solution %}
 
 function computeX(d, i) {
-    return i * 20
+    return i * 30
 }
 
 function computeHeight(d, i) {
-    return i * 20 + 100
+    return d/3484459
 }
 
 function computeY(d, i) {
-    return 400 - i * 20 - 100
+    return 400 - d/3484459
 }
 
 function computeColor(d, i) {
@@ -31,10 +31,10 @@ function computeColor(d, i) {
 
 var viz = _.map(data, function(d, i){
             return {
-                x: computeX(d, i),
-                y: computeY(d, i),
-                height: computeHeight(d, i),
-                color: computeColor(d, i)
+                x: computeX(d.pop, i),
+                y: computeY(d.pop, i),
+                height: computeHeight(d.pop, i),
+                color: computeColor(d.pop, i)
             }
          })
 console.log(viz)

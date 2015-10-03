@@ -99,8 +99,10 @@ var viz = _.map(data, function(d, i){
             return {
                 x: computeX(d, i),
                 y: computeY(d, i),
-                width: computeWidth(d, i),
-                color: computeColor(d, i)
+                widthDef: d["Attack"],
+                width: d["Defense"],
+                color: computeColor(d, i),
+                label: d["Name"]
             }
          })
 console.log(viz)
@@ -114,12 +116,22 @@ return result.join('\n')
 {% template %}
 <g transform="translate(120 ${d.y})">
     <rect
-         x="-${d.width}"
-         width="${d.width}"
+         x="-${d.widthDef}"
+         width="${d.widthDef}"
          height="20"
-         style="fill:${d.color};
+         style="fill:red;
                 stroke-width:1;
                 stroke:rgb(0,0,0)" />
+<rect
+        x="0"
+        width="${d.width}"
+        height="20"
+        style="fill:blue;
+                stroke-width:1;
+                stroke:rgb(0,0,0)" />
+<text transform="translate(0 15)">
+        ${d.label}
+</text>
 </g>
 
 {% output %}
